@@ -1,0 +1,16 @@
+<div ng-controller="bookDetailCtrl as vm" class="bookMarkDetails">
+
+    <div ng-class="{marksHorScroll : vm.parallMode == 'true', marksHorNoScroll : vm.parallMode == 'false'}"
+         ng-repeat="bookMarkGroup in vm.bookMarkArr">
+        <ul style="list-style: none">
+            <li ng-repeat="bookMark in bookMarkGroup"
+                ng-click="vm.openPage(bookMark.url)" class="urlPointer">
+                <div class="singleMark">
+                    <img ng-src="{{bookMark.favUrl}}" width="16" height="16" alt="{{bookMark.title}}">
+                    <span class="urlTitleTxt">{{bookMark.title}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>

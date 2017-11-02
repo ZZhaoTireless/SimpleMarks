@@ -1,0 +1,59 @@
+<div ng-controller="bookMarksCtrl as vm" class="bookMarkFolder">
+    <div class="bookmarksDisplay">
+
+        <ul style="list-style: none">
+            <li ng-if="vm.searchFolder"
+                class="pointer"
+                style="-webkit-padding-start: {{folder.startPadding}}">
+
+                <div ng-class="{selected : vm.searchFolder == true}">
+                    <div class="folderName">
+                        <md-icon md-svg-src="img/icons/ic_location_searching_black_24px.svg"></md-icon>
+                        <span>Searching {{vm.searchInputData}}</span>
+                    </div>
+                </div>
+
+            </li>
+            <li ng-repeat="folder in vm.folderArr" ng-click="vm.folderCtrl(folder)"
+                class="pointer" ng-if="folder.show == 'true'"
+                style="-webkit-padding-start: {{folder.startPadding}}">
+
+                <div ng-class="{selected : vm.curSelected == folder.id && vm.searchFolder == false}">
+                    <div class="folderName">
+                        <md-icon ng-click="$event.stopPropagation();vm.openFolder(folder)"
+                                 class="folderOpen"
+                                 ng-if="folder.status =='close' && folder.folderPos == 'notBot'"
+                                 md-svg-src="img/icons/ic_folder_black_24px.svg"></md-icon>
+
+                        <md-icon ng-click="$event.stopPropagation()"
+                                 class="folderBot"
+                                 ng-if="folder.folderPos == 'bot'"
+                                 md-svg-src="img/icons/ic_folder_black_24px.svg"></md-icon>
+
+                        <md-icon ng-click="$event.stopPropagation();vm.openFolder(folder)"
+                                 class="folderOpen"
+                                 ng-if="folder.status == 'open' && folder.folderPos == 'notBot'"
+                                 md-svg-src="img/icons/ic_folder_open_black_24px.svg"></md-icon>
+
+                        <span class="folderNameTxt">{{folder.title}}</span>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+
+    <div ng-if="vm.showScrollDown" class="tranContainer column flex">
+
+        <md-icon id="iconUp" ng-click="vm.scrollUp()"
+                 md-svg-src="img/icons/ic_keyboard_arrow_up_black_24px.svg"></md-icon>
+
+        <md-icon id="iconMid" ng-click="vm.scrollReset()"
+                 md-svg-src="img/icons/ic_reset_black.svg"></md-icon>
+
+        <md-icon id="iconDown" ng-click="vm.scrollDown()"
+                 md-svg-src="img/icons/ic_keyboard_arrow_down_black_24px.svg"></md-icon>
+
+    </div>
+</div>

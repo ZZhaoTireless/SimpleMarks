@@ -1,0 +1,11 @@
+<div ng-controller="searchBarCtrl as vm" class="bookmarksSearch">
+
+    <md-input-container ng-if="vm.showSearch == 'true'" md-no-float class="md-block">
+
+        <md-icon md-svg-src="img/icons/ic_search_black_24px.svg"></md-icon>
+
+        <input ng-model="vm.searchInput" ng-blur="vm.cleanText()" placeholder="Search Bookmarks">
+
+    </md-input-container>
+
+</div>

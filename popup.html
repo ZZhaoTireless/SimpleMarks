@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="mainApp" ng-csp>
+
+<meta charset="UTF-8">
+
+<body id="bookMarks">
+
+<div id="searchBar" ng-include="'js/app/search/search.tpl.html'" ng-cloak></div>
+
+
+<div>
+
+    <div class="inline" id="bookMarkCont" ng-include="'js/app/bookmarks/bookmartks.tpl.html'" ng-cloak></div>
+
+    <div class="inline" id="bookDetails" ng-include="'js/app/bookDetails/bookDetails.tpl.html'" ng-cloak></div>
+
+    <div class="inline" id="bookTools" ng-include="'js/app/bookTools/booktools.tpl.html'" ng-cloak></div>
+
+</div>
+
+</body>
+
+<!-- CSS Block -->
+
+<link rel="stylesheet" href="css/popup.css">
+
+<link rel="stylesheet" href="css/angular-material.min.css">
+
+<!-- External libraries Block -->
+
+<script src="js/lib/jquery-2.2.0.min.js"></script>
+
+<script src="js/lib/angular.min.js"></script>
+
+<script src="js/lib/angular-animate.min.js"></script>
+
+<script src="js/lib/angular-aria.min.js"></script>
+
+<script src="js/lib/angular-material.min.js"></script>
+
+<script src="js/lib/angular-validator.min.js"></script>
+
+<script src="js/lib/jquery.mousewheel.min.js"></script>
+
+<!-- Local files -->
+<script src="js/app/appContrller.js"></script>
+
+<script src="js/app/search/searchController.js"></script>
+
+<script src="js/app/bookmarks/bookmarksController.js"></script>
+
+<script src="js/app/bookDetails/bookDetailsController.js"></script>
+
+
+</html>
